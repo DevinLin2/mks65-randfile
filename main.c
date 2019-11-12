@@ -8,7 +8,7 @@
 
 unsigned int randgen() {
   unsigned int randNumber;
-  int rand = open("/dev/random", 0_RDONLY);
+  int rand = open("/dev/random", O_RDONLY);
   // opening file error
   if (errno) {
     printf("error #: %d error: %s\n", errno, strerror(errno));
@@ -22,4 +22,9 @@ unsigned int randgen() {
   }
   close(rand);
   return randNumber;
+}
+
+int main() {
+  /* code */
+  return 0;
 }
